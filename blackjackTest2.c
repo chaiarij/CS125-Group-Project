@@ -194,7 +194,30 @@ int main()
   return 0;
 }
   
-  
-          
-          
+// WIP DEALING FUNCTION 
+int Ace()
+{ 
+    if (deck[i] == 11)
+    {
+      printf("You pulled an Ace! Would you like to keep it as a 1, or change it to an 11? \n");
+      scanf("%d", &ace);
+      // insert error checking here 
+
+      if (ace = 11)
+      {
+        playerhandvalue[player_num].value = playerhandvalue[player_num].value + 11;
+      }
+
+      else if
+      {
+        playerhandvalue[player_num].value = playerhandvalue[player_num].value + 1;
+      }
+      else
+      {
+        // insert shit be borke 
+      }
+   playerhandvalue[player_num].value = playerhandvalue[player_num].value + deck[i].value;
+  }
+}
+
   
