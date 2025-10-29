@@ -103,11 +103,11 @@ int main()
   //BLACKJACK WIN CASE
   if (playerHand[0].value + playerHand[1].value == 21)
   {
-    printf("YOUR WINNER\n");
+    printf("YOU ARE A WINNER\n");
   }
   else if (dealerHand[0].value + playerHand[1].value == 21)
   {
-    printf("YOUR LOOSER\n");
+    printf("YOU ARE A LOSER\n");
   }
   
   //PLAYER CHOICE MENU LOOP
@@ -137,6 +137,7 @@ int main()
     {
       //HIT CASE
       case 1:
+        // check to see if playerhandvalue < 21 ! 
         playerHand[playerIndexPos] = deck[(rand() % 104)];
         playerIndexPos++;
         break;
@@ -225,3 +226,19 @@ int Ace(Card *playerHand)
 }
 
   
+int Player_Hit()
+{ 
+  while playerhand[i].value < 21
+    {
+      playerHand[playerIndexPos] = deck[(rand() % 104)];
+      int Ace();
+        playerIndexPos++;
+    }
+}
+
+// idea: make a function for Dealer hits depending on CPU difficulty that the player chose 
+
+int Dealer_Hit()
+{
+  // insert stuff here, still working 
+}
