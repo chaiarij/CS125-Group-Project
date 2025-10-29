@@ -240,5 +240,36 @@ int Player_Hit()
 
 int Dealer_Hit()
 {
-  // insert stuff here, still working 
+   while (dealerHandValue < 17)
+  {
+    dealerHand[dealerIndexPos] = deck[(rand() % 104)];
+    dealerIndexPos++;
+    
+    for (i = 0; i < 10; i++)
+    {
+      dealerHandValue += dealerHand[i].value;
+      
+      if (dealerHandValue > 21)
+      {
+        printf("YOUR WINNER\n");
+        break
+      }
+    }
+  }
+  // can change function depending on how we want to do the dealer difficulty and such. 
 }
+
+/* int funds()
+{
+    gambling/funding functions for later if wanted
+    for ( i = 0; i < player_num; i++)
+    {
+    printf("Player %d, would you like to add funds?", i) ;
+    // something something scanf
+    // if 1, scanf for funds amount 
+    // if 2, check if they're in debt
+    // if they're in debt for a certain amount, kick them out lol 
+    
+    }
+}
+*/
