@@ -268,8 +268,75 @@ int main()
 
   return 0;
 }
-  
-  
-          
-          
+
+
+// COPIED WIP FUNCTIONS FROM LAST ITERATION
+/* int Ace(Card *playerHand)
+{ 
+  int ace;
+  for (i = 0; i < 10; i++)
+  {
+    if (playerHand[i] == 11)
+    {
+      printf("You pulled an Ace! Would you like to keep it as a 1, or change it to an 11? \n");
+      //scanf("%d", &ace);
+      // insert error checking here 
+      ace = input_validation_check_int("Invalid input. Please input 1 or 11.\n");
+
+      if (ace == 11)
+      {
+        playerHand[i].value += 11;
+      }
+
+      else if (ace == 1)
+      {
+        playerHand[i].value += 1;
+      }
+      else
+      {
+        // insert shit be borke
+        printf("Shit be broke\n");
+      }
+  }
+} */
+
+
+// idea: make a function for Dealer hits depending on CPU difficulty that the player chose 
+
+/* int Dealer_Hit()
+{
+   while (dealerHandValue < 17)
+  {
+    dealerHand[dealerIndexPos] = deck[(rand() % 104)];
+    dealerIndexPos++;
+
+    for (i = 0; i < 10; i++)
+    {
+      dealerHandValue += dealerHand[i].value;
+      
+      if (dealerHandValue > 21)
+      {
+        printf("YOUR WINNER\n");
+        break
+      }
+    }
+  }
+  // can change function depending on how we want to do the dealer difficulty and such. 
+} */
+
+/* int funds()
+{
+    gambling/funding functions for later if wanted
+    for ( i = 0; i < player_num; i++)
+    {
+    printf("Player %d, would you like to add funds?", i) ;
+    // something something scanf
+    // if 1, scanf for funds amount 
+    // if 2, check if they're in debt
+    // if they're in debt for a certain amount, kick them out lol 
+    
+    }
+}
+*/
+
   
