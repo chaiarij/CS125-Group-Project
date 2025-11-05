@@ -279,9 +279,12 @@ int main()
     if (playerHand[i] == 11)
     {
       printf("You pulled an Ace! Would you like to keep it as a 1, or change it to an 11? \n");
-      //scanf("%d", &ace);
+     scanf("%d", &ace);
+
+     
       // insert error checking here 
       ace = input_validation_check_int("Invalid input. Please input 1 or 11.\n");
+      // this is Ryan's error handling function. 
 
       if (ace == 11)
       {
@@ -298,6 +301,7 @@ int main()
         printf("Shit be broke\n");
       }
   }
+  return playerhand[i].value;
 } */
 
 
@@ -338,5 +342,3 @@ int main()
     }
 }
 */
-
-  
