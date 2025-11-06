@@ -68,7 +68,7 @@ void deckShuffle() {
   // Variable declarations and reads file to lines array
   char lines[110][256];
   char line1[256], line2[256];
-  int targetLine1, targetLine2, i=0, j;
+  int targetLine1, targetLine2, i=0, j, funds[10];
   srand(time(0));
   
   while (fgets(lines[i], sizeof(lines[i]), blackjackDeck)) {
@@ -379,17 +379,41 @@ int main() {
   // can change function depending on how we want to do the dealer difficulty and such. 
 } */
 
-/* int funds()
+/* int funds(int funds[10])
 {
-    gambling/funding functions for later if wanted
-    for ( i = 0; i < player_num; i++)
+    //gambling/funding functions for later if wanted
+    int ii, choice, moolah;
+    for ( ii = 0; ii < player_num; ii++)
     {
-    printf("Player %d, would you like to add funds?", i) ;
-    // something something scanf
+    printf("Your current funds are: %d", funds[ii]);
+    printf("Player %d, would you like to add funds?\n", ii);
+    printf("[1] Yes [2] No\n");
+    scanf("%d", &choice);
+    choice = input_verification_type_int("Invalid Input. [1] Yes [2] No\n");
     // if 1, scanf for funds amount 
-    // if 2, check if they're in debt
-    // if they're in debt for a certain amount, kick them out lol 
+    switch (choice)
+    {
+      case 1:
+        printf("How much would you like to add?\n");
+        scanf("%d", &moolah);
+        moolah = input_verification_type_int("Invalid Input. How much would you like to add?\n");
+        funds[ii] = funds[ii] + moolah;
+        printf("Your current funds are: %d", funds[ii]);
+        return funds[ii];
+      case 2:
+        if (ii < 0)
+        {
+          // insert kicking out stuff here
+          printf("Player %d, you are in debt. We are kicking you all out. Goodbye!", ii);
+          return 0;
+        }
+        else
+        {
+          return funds[ii];
+        }
+    }
     
     }
 }
 */
+
