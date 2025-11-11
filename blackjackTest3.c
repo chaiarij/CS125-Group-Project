@@ -121,7 +121,7 @@ int input_verification_type_int(char *err_msg)
 
 int main() {
   //INT DECLARATIONS  
-  int choice, playerHandValue, dealerHandValue, playerIndexPos, dealerIndexPos, exitFlag, i;
+  int choice, playerHandValue, dealerHandValue, playerIndexPos, dealerIndexPos, exitFlag, i, wincon;
   srand(time(0));
   
   //DEFINING THE CARD DECK
@@ -183,7 +183,8 @@ int main() {
     
     deck[i].drawn = 0;
   }
-  
+
+  //
   //printf("Break 1\n");
   //printf("%ld\n", __STDC_VERSION__);
   
@@ -305,14 +306,17 @@ int main() {
   if (playerHandValue > dealerHandValue && playerHandValue < 21)
   {
     printf("I CAN'T STOP WINNING\n");
+    wincon = 1;
   }
   else if (playerHandValue < dealerHandValue && dealerHandValue < 21)
   {
     printf("AW DANGIT\n");
+    wincon = 2;
   }
   else if (playerHandValue == dealerHandValue && playerHandValue < 21)
   {
     printf("It's a tie");
+    wincon = 3;
   }
   else
     printf("If you're seeing this, it be brogen.\n");
@@ -379,7 +383,7 @@ int main() {
   // can change function depending on how we want to do the dealer difficulty and such. 
 } */
 
-/* int funds(int funds[10])
+/* int funds(int funds[10], int bet[10])
 {
     //gambling/funding functions for later if wanted
     int ii, choice, moolah;
@@ -398,8 +402,9 @@ int main() {
         scanf("%d", &moolah);
         moolah = input_verification_type_int("Invalid Input. How much would you like to add?\n");
         funds[ii] = funds[ii] + moolah;
+        moolah = bet[ii]
         printf("Your current funds are: %d", funds[ii]);
-        return funds[ii];
+        return funds[ii], return bet[ii];
       case 2:
         if (ii < 0)
         {
@@ -409,7 +414,8 @@ int main() {
         }
         else
         {
-          return funds[ii];
+          bet[ii] = 0;
+          return funds[ii], return bet[ii];
         }
     }
     
@@ -417,3 +423,36 @@ int main() {
 }
 */
 
+/* int bank(int win, int bet[ii], int funds[ii])
+{
+  int i;
+  if win == 1
+  {
+    printf("Players Win! \n");
+    for (i = 0; i > player_num, i++)
+    {
+      bet[ii] = bet[ii]*2;
+      funds[ii] = funds[ii] + bet[ii];
+      printf("Player %d, your new funds are now %d \n", ii, funds[ii]);
+    }
+  }
+
+  if win == 2
+  {
+    printf("House Win! \n");
+    for (i = 0; i > player_num, i++)
+    {
+      funds[ii] = funds[ii] - bet[ii];
+      printf("Player %d, your new funds are now %d \n", ii, funds[ii]);
+    }
+  }
+
+  if win == 3
+  {
+    for (i = 0; i > player_num, i++)
+    {
+      return funds[ii];
+    }
+  }
+}
+*/
