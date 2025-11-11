@@ -135,7 +135,7 @@ int input_verification_type_int(char *err_msg)
 
 int main() {
   //INT DECLARATIONS  
-  int choice, playerHandValue, dealerHandValue, playerIndexPos, dealerIndexPos, exitFlag, i;
+  int choice, playerHandValue, dealerHandValue, playerIndexPos, dealerIndexPos, exitFlag, i, newCard;
   srand(time(0));
   
   //DEFINING THE CARD DECK
@@ -200,11 +200,18 @@ int main() {
   
   //printf("Break 2\n");
   //POPULATING PLAYER & DEALER HANDS
-  //TBA: ADD FUNCTIONALITY FOR CHECKING DRAWN STATUS
-  for (i = 0; i < 2; i++)
-  {
-    playerHand[i] = deck[(rand() % 104)];
-    dealerHand[i] = deck[(rand() % 104)];
+  for (i = 0; i < 2; i++) {
+    newCard = (rand() % 104);
+    while (deck[newCard].drawn = 1) {
+      newCard = (rand() % 104);
+    }
+    playerHand[i] = deck[newCard];
+    
+    newCard = (rand() % 104);
+    while (deck[newCard].drawn = 1) {
+      newCard = (rand() % 104);
+    }
+    dealerHand[i] = deck[newCard];
   }
   
   //ace(Card *playerHand)
@@ -399,3 +406,4 @@ int main() {
     }
 }
 */
+
