@@ -202,13 +202,13 @@ int main() {
   //POPULATING PLAYER & DEALER HANDS
   for (i = 0; i < 2; i++) {
     newCard = (rand() % 104);
-    while (deck[newCard].drawn = 1) {
+    while (deck[newCard].drawn == 1) {
       newCard = (rand() % 104);
     }
     playerHand[i] = deck[newCard];
     
     newCard = (rand() % 104);
-    while (deck[newCard].drawn = 1) {
+    while (deck[newCard].drawn == 1) {
       newCard = (rand() % 104);
     }
     dealerHand[i] = deck[newCard];
@@ -406,4 +406,5 @@ int main() {
     }
 }
 */
+
 
